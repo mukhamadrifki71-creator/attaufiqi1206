@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Hub - Website Saya</title>
+  
+  <!-- PWA Meta Tags & Manifest -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0d253f">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      /* Gambar Background Kustom */
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Overlay Gelap Transparan agar Teks Mudah Dibaca */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 25, 47, 0.75);
+      z-index: 1;
+    }
+
+    /* Pembungkus Konten Utama */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* Header Navigasi */
+    header {
+      position: relative;
+      z-index: 2;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section / Banner Quotes */
+    .hero {
+      text-align: center;
+      padding: 40px 10px 20px;
+    }
+
+    .quote-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+      max-width: 600px;
+    }
+
+    .quote-title {
+      font-size: 1.8rem;
+      font-style: italic;
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    .quote-sub {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    /* Grid Kartu Menu */
+    .menu-section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin-bottom: 15px;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+      padding-bottom: 5px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.2s, border-color 0.2s;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+      background: rgba(30, 41, 59, 0.9);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigasi -->
+  <header>
+    <div class="nav-wrapper">
+      <div class="logo">Personal Hub</div>
+      <nav>
+        <a href="#sekolah">Sekolah</a>
+        <a href="#berkas">Berkas Saya</a>
+        <a href="#keluarga">Keluarga</a>
+        <a href="#hobi">Hobi & Sampingan</a>
+        <a href="#pustaka">Pustaka</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <div class="container">
+    
+    <!-- Hero / Quote Section -->
+    <div class="hero">
+      <div class="quote-box">
+        <div class="quote-title">“Cogito, ergo sum”</div>
+        <div class="quote-sub">Aku berpikir, maka aku ada</div>
+      </div>
+    </div>
+
+    <!-- 1. Sekolah -->
+    <div id="sekolah" class="menu-section">
+      <h2 class="section-title">🎓 Sekolah</h2>
+      <div class="grid-cards">
+        <a href="https://sekolah-anda.com" target="_blank" class="card">
+          <h3>Website Sekolah / Tugas</h3>
+          <p>Akses portal tugas, modul belajar, dan informasi akademis.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. Berkas Saya -->
+    <div id="berkas" class="menu-section">
+      <h2 class="section-title">📁 Berkas Saya</h2>
+      <div class="grid-cards">
+        <a href="https://drive.google.com" target="_blank" class="card">
+          <h3>Arsip Dokumen & CV</h3>
+          <p>Kumpulan dokumen penting, sertifikat, dan arsip digital.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. Keluarga -->
+    <div id="keluarga" class="menu-section">
+      <h2 class="section-title">👨‍👩‍👧‍👦 Keluarga</h2>
+      <div class="grid-cards">
+        <a href="https://keluarga-anda.com" target="_blank" class="card">
+          <h3>Galeri Keluarga</h3>
+          <p>Album foto kenangan dan situs informasi keluarga.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. Hobi dan Sampingan -->
+    <div id="hobi" class="menu-section">
+      <h2 class="section-title">🎨 Hobi & Sampingan</h2>
+      <div class="grid-cards">
+        <a href="https://hobi-anda.com" target="_blank" class="card">
+          <h3>Proyek Kreatif</h3>
+          <p>Karya seni, proyek sampingan, dan konten eksperimental.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 5. Pustaka -->
+    <div id="pustaka" class="menu-section">
+      <h2 class="section-title">📚 Pustaka</h2>
+      <div class="grid-cards">
+        <a href="https://pustaka-anda.com" target="_blank" class="card">
+          <h3>Catatan & Referensi</h3>
+          <p>Ringkasan buku, artikel pilihan, dan repositori bacaan.</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Personal Hub. Powered by PWA & GitHub Pages.
+  </footer>
+
+  <!-- Script PWA Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker Active:', reg.scope))
+          .catch(err => console.error('SW Error:', err));
+      });
+    }
+  </script>
+
+</body>
+</html>
