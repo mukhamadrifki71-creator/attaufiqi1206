@@ -10,10 +10,10 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
 
-  <!-- Google Fonts Tipografi Modern -->
+  <!-- Google Fonts untuk Tipografi Modern & Menarik -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -73,7 +73,7 @@
 
     .header-logo span {
       font-weight: 800;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       letter-spacing: 0.3px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
       background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
@@ -84,7 +84,7 @@
     /* Menu Navigasi Atas */
     .top-nav {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
@@ -92,9 +92,9 @@
       color: #f1f5f9;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-      padding: 8px 16px;
+      padding: 6px 14px;
       border-radius: 8px;
       transition: all 0.25s ease;
     }
@@ -102,57 +102,56 @@
     .top-nav-link:hover {
       background: rgba(255, 255, 255, 0.25);
       color: #ffffff;
-      transform: translateY(-1px);
     }
 
-    /* Layout Utama: Sidebar Kiri Besar & Konten Utama */
+    /* Layout Utama: Sidebar Kiri & Konten Teks */
     .main-wrapper {
       margin-top: 80px;
-      padding: 35px 28px;
+      padding: 30px 28px;
       flex: 1;
       display: flex;
       gap: 32px;
       align-items: flex-start;
-      max-width: 1300px;
+      max-width: 1250px;
       width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
 
-    /* Sidebar Kiri Membesar */
+    /* Sidebar Kiri */
     .sidebar-left {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      padding: 24px;
+      gap: 14px;
+      padding: 22px;
       background: rgba(15, 23, 42, 0.55);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-radius: 24px;
+      border-radius: 22px;
       border: 1.5px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-      width: 280px;
+      width: 270px;
       flex-shrink: 0;
     }
 
     .sidebar-title {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.2px;
       color: #38bdf8;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       padding-left: 4px;
     }
 
     .sidebar-item {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       text-decoration: none;
       color: #ffffff;
-      padding: 14px 18px;
-      border-radius: 16px;
+      padding: 12px 16px;
+      border-radius: 14px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -161,19 +160,19 @@
     .sidebar-item:hover {
       background: rgba(255, 255, 255, 0.95);
       color: #0f172a;
-      transform: translateX(8px);
+      transform: translateX(6px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       border-color: #ffffff;
     }
 
     .sidebar-icon {
-      font-size: 1.4rem;
-      width: 32px;
+      font-size: 1.3rem;
+      width: 28px;
       text-align: center;
     }
 
     .sidebar-label {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     }
@@ -182,98 +181,80 @@
       text-shadow: none;
     }
 
-    /* Area Konten Isi Halaman */
-    .content-area {
+    /* Area Teks Tanpa Bingkai */
+    .content-area-clean {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
+      padding-top: 8px;
     }
 
-    .welcome-card {
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 24px;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
-      padding: 36px 40px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    /* Teks Salam & Deskripsi Singkat */
+    .text-welcome {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .welcome-card .greeting {
-      font-size: 1.1rem;
+    .text-welcome .greeting {
+      font-size: 0.85rem;
       font-weight: 700;
       color: #38bdf8;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      letter-spacing: 1.2px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-    .welcome-card h1 {
-      font-size: 2.3rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      color: #ffffff;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    }
-
-    .welcome-card p.description {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #e2e8f0;
-      font-weight: 400;
-    }
-
-    .motivation-card {
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(99, 102, 241, 0.25));
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 24px;
-      border: 1.5px solid rgba(56, 189, 248, 0.4);
-      padding: 30px 36px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .motivation-card::before {
-      content: "“";
-      font-family: 'Playfair Display', serif;
-      position: absolute;
-      top: -20px;
-      right: 20px;
-      font-size: 9rem;
-      color: rgba(255, 255, 255, 0.1);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .motivation-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #7dd3fc;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .motivation-quote {
-      font-family: 'Playfair Display', Georgia, serif;
+    .text-welcome h1 {
       font-size: 1.35rem;
-      font-style: italic;
-      line-height: 1.6;
+      font-weight: 800;
       color: #ffffff;
-      margin-bottom: 12px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      line-height: 1.3;
     }
 
-    .motivation-sub {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      font-weight: 500;
+    .text-welcome p.description {
+      font-size: 0.88rem;
       line-height: 1.6;
+      color: #e2e8f0;
+      font-weight: 500;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      max-width: 750px;
+    }
+
+    /* Teks Motivasi Islami (Tanpa Bingkai) */
+    .text-motivation {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 750px;
+    }
+
+    .text-motivation .tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7dd3fc;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .text-motivation .quote {
+      font-family: 'Amiri', 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #f8fafc;
+      line-height: 1.6;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    }
+
+    .text-motivation .author {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     /* Responsif Layar HP */
@@ -298,16 +279,12 @@
         width: 100%;
       }
 
-      .welcome-card {
-        padding: 24px 20px;
+      .text-welcome h1 {
+        font-size: 1.2rem;
       }
 
-      .welcome-card h1 {
-        font-size: 1.75rem;
-      }
-
-      .motivation-card {
-        padding: 22px 20px;
+      .text-motivation .quote {
+        font-size: 0.98rem;
       }
     }
   </style>
@@ -368,28 +345,28 @@
       </a>
     </aside>
 
-    <!-- Konten Utama Halaman -->
-    <main class="content-area">
+    <!-- Konten Utama: Hanya Teks Tanpa Bingkai (Font Lebih Kecil) -->
+    <main class="content-area-clean">
       
-      <!-- Kartu Salam Pembuka & Deskripsi -->
-      <section class="welcome-card">
+      <!-- Teks Ucapan Selamat Datang -->
+      <div class="text-welcome">
         <div class="greeting">👋 Selamat Datang</div>
         <h1>Selamat Datang di Attaufiqi-website</h1>
         <p class="description">
-          Situs ini merupakan portal pusat (*hub*) ekosistem digital yang dirancang khusus untuk menghubungkan seluruh platform, arsip sekolah, berkas pribadi, karya hobi, serta pustaka digital secara terorganisir, cepat, dan terintegrasi dalam satu tempat.
+          Portal pusat (*hub*) ekosistem digital untuk mengakses platform sekolah, berkas pribadi, hobi, dan pustaka digital secara terintegrasi.
         </p>
-      </section>
+      </div>
 
-      <!-- Kartu Motivasi Inovasi -->
-      <section class="motivation-card">
-        <div class="motivation-title">🚀 Semangat Inovasi</div>
-        <div class="motivation-quote">
-          “Inovasi adalah pembeda antara seorang pemimpin dan pengikut. Teruslah berkarya, mencoba hal baru, dan ciptakan solusi bernilai setiap hari.”
+      <!-- Teks Motivasi Pepatah Islami / Tokoh Muslim -->
+      <div class="text-motivation">
+        <div class="tag">✨ Mutiara Hikmah</div>
+        <div class="quote">
+         "Jika kamu menanam bunga dalam pikiranmu, kamu akan melihat taman di sekelilingmu. Jika kamu menanam duri, kamu hanya akan menemukan semak berbelukar.”
         </div>
-        <div class="motivation-sub">
-          Jangan pernah takut untuk memulai hal baru. Setiap langkah kecil dalam belajar dan berinovasi adalah fondasi menuju pencapaian besar di masa depan.
+        <div class="author">
+          — Jalaludiin ArRumi
         </div>
-      </section>
+      </div>
 
     </main>
 
