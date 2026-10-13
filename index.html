@@ -22,7 +22,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
 
       /* Background Full 100% tanpa ditutupi warna tema */
@@ -31,9 +31,46 @@
       position: relative;
     }
 
-    /* Container Pintasan Menu Bulat ala Google New Tab */
+    /* Header Navigasi Atas Transparan (Menu Atas) */
+    header {
+      width: 100%;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .top-nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .top-nav-link:hover {
+      background: rgba(255, 255, 255, 0.9);
+      color: #0f172a;
+      text-shadow: none;
+    }
+
+    /* Container Pintasan Menu Bulat Ala Google di Bawah */
     .shortcuts-container {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       padding: 15px 25px;
       background: rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(12px);
@@ -95,6 +132,20 @@
   </style>
 </head>
 <body>
+
+  <!-- Menu Navigasi Atas (Header Transparan) -->
+  <header>
+    <nav class="top-nav">
+      <a href="https://sekolah-anda.com" target="_blank" class="top-nav-link">🎓 Sekolah</a>
+      <a href="https://drive.google.com" target="_blank" class="top-nav-link">📁 Berkas Saya</a>
+      <a href="https://keluarga-anda.com" target="_blank" class="top-nav-link">👨‍👩‍👧‍👦 Keluarga</a>
+      <a href="https://hobi-anda.com" target="_blank" class="top-nav-link">🎨 Hobi</a>
+      <a href="https://pustaka-anda.com" target="_blank" class="top-nav-link">📚 Pustaka</a>
+    </nav>
+  </header>
+
+  <!-- Area Tengah Kosong 100% Mengespos Foto Background -->
+  <div></div>
 
   <!-- Pintasan Menu Melayang di Bawah Ala Google -->
   <div class="shortcuts-container">
