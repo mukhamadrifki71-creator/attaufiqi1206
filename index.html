@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Hub</title>
+  <title>Attaufiqi-website</title>
   
   <!-- PWA Meta Tags & Manifest -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#ffffff">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+  <!-- Google Fonts Tipografi Modern -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,13 +23,15 @@
     }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      color: #ffffff;
 
-      /* Background Full 100% tanpa ditutupi warna tema */
-      background: url('background.jpg') no-repeat center center fixed;
+      /* Background Gambar dengan Overlay Gelap Transparansi 60% */
+      background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
+                  url('background.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
@@ -32,13 +39,13 @@
     /* Header Atas: Logo + Navigasi Teks */
     header {
       width: 100%;
-      padding: 12px 25px;
+      padding: 14px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       position: fixed;
       top: 0;
@@ -46,106 +53,128 @@
       z-index: 100;
     }
 
-    /* Logo / Icon Header di Pojok Kiri Atas */
+    /* Logo Header */
     .header-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       color: #ffffff;
     }
 
     .header-logo img {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
       object-fit: cover;
-      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .header-logo span {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.3px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Menu Navigasi Atas (Hanya Teks) */
+    /* Menu Navigasi Atas */
     .top-nav {
       display: flex;
-      gap: 15px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .top-nav-link {
-      color: #ffffff;
+      color: #f1f5f9;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: all 0.2s ease;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
     }
 
     .top-nav-link:hover {
       background: rgba(255, 255, 255, 0.25);
       color: #ffffff;
+      transform: translateY(-1px);
     }
 
-    /* Layout Utama: Sidebar di Kiri */
+    /* Layout Utama: Sidebar Kiri Besar & Konten Utama */
     .main-wrapper {
-      margin-top: 70px;
-      padding: 20px;
+      margin-top: 80px;
+      padding: 35px 28px;
       flex: 1;
       display: flex;
-      align-items: center; /* Posisi Vertikal Tengah */
+      gap: 32px;
+      align-items: flex-start;
+      max-width: 1300px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Sidebar Kiri Melayang (Urutan Atas ke Bawah) */
+    /* Sidebar Kiri Membesar */
     .sidebar-left {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
-      width: 190px;
+      gap: 16px;
+      padding: 24px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 24px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      width: 280px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #38bdf8;
+      margin-bottom: 4px;
+      padding-left: 4px;
     }
 
     .sidebar-item {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       text-decoration: none;
       color: #ffffff;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.2);
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.25s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .sidebar-item:hover {
       background: rgba(255, 255, 255, 0.95);
       color: #0f172a;
-      transform: translateX(5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: translateX(8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-color: #ffffff;
     }
 
     .sidebar-icon {
-      font-size: 1.2rem;
-      width: 28px;
+      font-size: 1.4rem;
+      width: 32px;
       text-align: center;
     }
 
     .sidebar-label {
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     }
 
@@ -153,33 +182,143 @@
       text-shadow: none;
     }
 
-    /* Responsif untuk Layar HP */
-    @media (max-width: 600px) {
+    /* Area Konten Isi Halaman */
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .welcome-card {
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 24px;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      padding: 36px 40px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .welcome-card .greeting {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .welcome-card h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .welcome-card p.description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #e2e8f0;
+      font-weight: 400;
+    }
+
+    .motivation-card {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(99, 102, 241, 0.25));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 24px;
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      padding: 30px 36px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motivation-card::before {
+      content: "“";
+      font-family: 'Playfair Display', serif;
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-size: 9rem;
+      color: rgba(255, 255, 255, 0.1);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .motivation-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #7dd3fc;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .motivation-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: #ffffff;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .motivation-sub {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Responsif Layar HP */
+    @media (max-width: 868px) {
+      .main-wrapper {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+      }
+
       header {
         flex-direction: column;
-        gap: 8px;
-        padding: 10px 15px;
+        gap: 10px;
+        padding: 12px 16px;
       }
 
       .main-wrapper {
-        margin-top: 100px;
-        justify-content: center;
+        margin-top: 110px;
       }
 
       .sidebar-left {
         width: 100%;
-        max-width: 320px;
+      }
+
+      .welcome-card {
+        padding: 24px 20px;
+      }
+
+      .welcome-card h1 {
+        font-size: 1.75rem;
+      }
+
+      .motivation-card {
+        padding: 22px 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Atas: Logo/Icon Kiri + Navigasi Teks Kanan -->
+  <!-- Header Atas: Logo Kiri + Navigasi Teks Kanan -->
   <header>
     <a href="#" class="header-logo">
-      <img src="logo.png" alt="Logo" onerror="this.src='./icons/icon-192.png'">
-      <span>Personal Hub</span>
+      <img src="logo.png" alt="Attaufiqi Logo" onerror="this.src='./icons/icon-192.png'">
+      <span>Attaufiqi-website</span>
     </a>
     
     <nav class="top-nav">
@@ -191,10 +330,13 @@
     </nav>
   </header>
 
-  <!-- Area Utama dengan Sidebar di Kiri (Atas ke Bawah) -->
+  <!-- Area Utama -->
   <div class="main-wrapper">
+    
+    <!-- Sidebar Kiri Membesar -->
     <aside class="sidebar-left">
-      
+      <div class="sidebar-title">Menu Utama</div>
+
       <!-- 1. Sekolah -->
       <a href="https://sekolah-anda.com" target="_blank" class="sidebar-item">
         <span class="sidebar-icon">🎓</span>
@@ -224,8 +366,33 @@
         <span class="sidebar-icon">📚</span>
         <span class="sidebar-label">Pustaka</span>
       </a>
-
     </aside>
+
+    <!-- Konten Utama Halaman -->
+    <main class="content-area">
+      
+      <!-- Kartu Salam Pembuka & Deskripsi -->
+      <section class="welcome-card">
+        <div class="greeting">👋 Selamat Datang</div>
+        <h1>Selamat Datang di Attaufiqi-website</h1>
+        <p class="description">
+          Situs ini merupakan portal pusat (*hub*) ekosistem digital yang dirancang khusus untuk menghubungkan seluruh platform, arsip sekolah, berkas pribadi, karya hobi, serta pustaka digital secara terorganisir, cepat, dan terintegrasi dalam satu tempat.
+        </p>
+      </section>
+
+      <!-- Kartu Motivasi Inovasi -->
+      <section class="motivation-card">
+        <div class="motivation-title">🚀 Semangat Inovasi</div>
+        <div class="motivation-quote">
+          “Inovasi adalah pembeda antara seorang pemimpin dan pengikut. Teruslah berkarya, mencoba hal baru, dan ciptakan solusi bernilai setiap hari.”
+        </div>
+        <div class="motivation-sub">
+          Jangan pernah takut untuk memulai hal baru. Setiap langkah kecil dalam belajar dan berinovasi adalah fondasi menuju pencapaian besar di masa depan.
+        </div>
+      </section>
+
+    </main>
+
   </div>
 
   <!-- PWA Service Worker -->
