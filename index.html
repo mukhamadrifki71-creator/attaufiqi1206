@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Hub - Ecosystem</title>
+  <title>Personal Hub</title>
   
   <!-- PWA Meta Tags & Manifest -->
   <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0284c7">
+  <meta name="theme-color" content="#ffffff">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
 
   <style>
@@ -19,200 +19,117 @@
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      color: #0f172a;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
       align-items: center;
 
-      /* Latar belakang cerah & transparan agar foto background terlihat utuh */
-      background: linear-gradient(135deg, rgba(240, 249, 255, 0.45), rgba(224, 242, 254, 0.45)), 
-                  url('background.jpg') no-repeat center top fixed;
+      /* Background Full 100% tanpa ditutupi warna tema */
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
+      position: relative;
     }
 
-    /* Container Utama Transparan */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px 15px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Banner / Header Gambar */
-    .header-banner {
-      width: 100%;
-      max-width: 850px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(2, 132, 199, 0.2);
-      border: 3px solid #ffffff;
-      background: #ffffff;
-      margin-bottom: 25px;
-    }
-
-    .header-banner img {
-      width: 100%;
-      height: auto;
-      max-height: 280px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    /* Judul Utama */
-    .site-title {
-      text-align: center;
-      margin-bottom: 25px;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 12px 24px;
-      border-radius: 50px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-    }
-
-    .site-title h1 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #0284c7;
-    }
-
-    .site-title p {
-      font-size: 0.9rem;
-      color: #475569;
-      margin-top: 2px;
-    }
-
-    /* Menu Navigasi Utama (Tombol Langsung Pindah ke Web Lain) */
-    .main-nav {
-      width: 100%;
-      max-width: 850px;
+    /* Container Pintasan Menu Bulat ala Google New Tab */
+    .shortcuts-container {
+      margin-bottom: 60px;
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 30px;
+      gap: 20px;
+      max-width: 90%;
     }
 
-    .nav-btn {
+    .shortcut-item {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.92);
-      color: #0369a1;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 14px 22px;
-      border-radius: 12px;
-      border: 1.5px solid #bae6fd;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
-      transition: all 0.25s ease;
-    }
-
-    .nav-btn:hover {
-      transform: translateY(-4px);
-      background: #0284c7;
       color: #ffffff;
-      border-color: #0284c7;
-      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+      width: 75px;
+      transition: transform 0.2s ease;
     }
 
-    .nav-btn span.icon {
-      font-size: 1.1rem;
+    .shortcut-item:hover {
+      transform: translateY(-5px);
     }
 
-    .nav-btn span.arrow {
+    .icon-circle {
+      width: 54px;
+      height: 54px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .shortcut-item:hover .icon-circle {
+      background: #ffffff;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .shortcut-label {
+      margin-top: 8px;
       font-size: 0.8rem;
-      opacity: 0.7;
-      transition: transform 0.2s;
-    }
-
-    .nav-btn:hover span.arrow {
-      transform: translateX(3px);
-      opacity: 1;
-    }
-
-    /* Footer Sederhana */
-    footer {
-      margin-top: auto;
-      padding: 20px;
+      font-weight: 600;
       text-align: center;
-      font-size: 0.8rem;
-      color: #475569;
-      background: rgba(255, 255, 255, 0.75);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       width: 100%;
-      backdrop-filter: blur(6px);
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- Pintasan Menu Melayang di Bawah Ala Google -->
+  <div class="shortcuts-container">
     
-    <!-- Banner Header (Ganti header.jpg dengan gambar headermu) -->
-    <div class="header-banner">
-      <img src="header.jpg" alt="Header Banner" onerror="this.src='background.jpg'">
-    </div>
+    <!-- 1. Sekolah -->
+    <a href="https://sekolah-anda.com" target="_blank" class="shortcut-item">
+      <div class="icon-circle">🎓</div>
+      <span class="shortcut-label">Sekolah</span>
+    </a>
 
-    <!-- Judul / Identitas Personal Hub -->
-    <div class="site-title">
-      <h1>Ekosistem Digital Saya</h1>
-      <p>Klik menu di bawah untuk langsung menuju ke website masing-masing</p>
-    </div>
+    <!-- 2. Berkas Saya -->
+    <a href="https://drive.google.com" target="_blank" class="shortcut-item">
+      <div class="icon-circle">📁</div>
+      <span class="shortcut-label">Berkas Saya</span>
+    </a>
 
-    <!-- Menu Navigasi Utama (Langsung Link Eksternal) -->
-    <nav class="main-nav">
-      
-      <!-- 1. Sekolah -->
-      <a href="https://sekolah-anda.com" target="_blank" class="nav-btn">
-        <span class="icon">🎓</span>
-        <span>Sekolah</span>
-        <span class="arrow">↗</span>
-      </a>
+    <!-- 3. Keluarga -->
+    <a href="https://keluarga-anda.com" target="_blank" class="shortcut-item">
+      <div class="icon-circle">👨‍👩‍👧‍👦</div>
+      <span class="shortcut-label">Keluarga</span>
+    </a>
 
-      <!-- 2. Berkas Saya -->
-      <a href="https://drive.google.com" target="_blank" class="nav-btn">
-        <span class="icon">📁</span>
-        <span>Berkas Saya</span>
-        <span class="arrow">↗</span>
-      </a>
+    <!-- 4. Hobi & Sampingan -->
+    <a href="https://hobi-anda.com" target="_blank" class="shortcut-item">
+      <div class="icon-circle">🎨</div>
+      <span class="shortcut-label">Hobi</span>
+    </a>
 
-      <!-- 3. Keluarga -->
-      <a href="https://keluarga-anda.com" target="_blank" class="nav-btn">
-        <span class="icon">👨‍👩‍👧‍👦</span>
-        <span>Keluarga</span>
-        <span class="arrow">↗</span>
-      </a>
-
-      <!-- 4. Hobi & Sampingan -->
-      <a href="https://hobi-anda.com" target="_blank" class="nav-btn">
-        <span class="icon">🎨</span>
-        <span>Hobi & Sampingan</span>
-        <span class="arrow">↗</span>
-      </a>
-
-      <!-- 5. Pustaka -->
-      <a href="https://pustaka-anda.com" target="_blank" class="nav-btn">
-        <span class="icon">📚</span>
-        <span>Pustaka</span>
-        <span class="arrow">↗</span>
-      </a>
-
-    </nav>
+    <!-- 5. Pustaka -->
+    <a href="https://pustaka-anda.com" target="_blank" class="shortcut-item">
+      <div class="icon-circle">📚</div>
+      <span class="shortcut-label">Pustaka</span>
+    </a>
 
   </div>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2026 Personal Hub. Powered by PWA &amp; GitHub Pages.
-  </footer>
 
   <!-- PWA Service Worker -->
   <script>
