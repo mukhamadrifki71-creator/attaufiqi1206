@@ -7,11 +7,11 @@
   
   <!-- PWA Meta Tags & Manifest -->
   <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0d253f">
+  <meta name="theme-color" content="#0284c7">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
 
   <style>
-    /* Reset & Base Styles */
+    /* Reset & Dasar Tampilan Cerah */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,120 +19,117 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #ffffff;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #0f172a;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      /* Gambar Background Kustom */
-      background: url('background.jpg') no-repeat center center fixed;
+      /* LATAR BELAKANG: Pastikan nama file gambar di GitHub disamakan dengan 'background.jpg' */
+      background: linear-gradient(135deg, rgba(240, 249, 255, 0.85), rgba(224, 242, 254, 0.85)), 
+                  url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
     }
 
-    /* Overlay Gelap Transparan agar Teks Mudah Dibaca */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10, 25, 47, 0.75);
-      z-index: 1;
-    }
-
-    /* Pembungkus Konten Utama */
+    /* Container Utama */
     .container {
-      position: relative;
-      z-index: 2;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 24px 20px;
       width: 100%;
     }
 
-    /* Header Navigasi */
+    /* Header Navigasi Cerah */
     header {
-      position: relative;
-      z-index: 2;
-      background: rgba(15, 23, 42, 0.85);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .nav-wrapper {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 15px 20px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #38bdf8;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0284c7;
+      letter-spacing: -0.5px;
     }
 
     nav {
       display: flex;
-      gap: 15px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: #e2e8f0;
+      color: #334155;
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.95rem;
+      font-weight: 600;
       transition: color 0.2s;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: #0284c7;
     }
 
-    /* Hero Section / Banner Quotes */
+    /* Hero / Banner Quote Cerah */
     .hero {
       text-align: center;
-      padding: 40px 10px 20px;
+      padding: 30px 10px 10px;
     }
 
     .quote-box {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 20px;
-      border-radius: 12px;
+      background: #ffffff;
+      border: 2px solid #bae6fd;
+      padding: 24px 28px;
+      border-radius: 16px;
       display: inline-block;
-      max-width: 600px;
+      max-width: 650px;
+      box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.15);
     }
 
     .quote-title {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-style: italic;
-      color: #38bdf8;
-      margin-bottom: 5px;
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 6px;
     }
 
     .quote-sub {
-      color: #94a3b8;
-      font-size: 1rem;
+      color: #475569;
+      font-size: 1.05rem;
+      font-weight: 500;
     }
 
-    /* Grid Kartu Menu */
+    /* Grid Kartu Menu Cerah */
     .menu-section {
-      margin-top: 30px;
+      margin-top: 36px;
     }
 
     .section-title {
-      font-size: 1.3rem;
-      color: #38bdf8;
-      margin-bottom: 15px;
-      border-bottom: 2px solid rgba(56, 189, 248, 0.3);
-      padding-bottom: 5px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .grid-cards {
@@ -142,44 +139,45 @@
     }
 
     .card {
-      background: rgba(30, 41, 59, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px;
       text-decoration: none;
-      color: #ffffff;
-      transition: transform 0.2s, border-color 0.2s;
+      color: #0f172a;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
       display: block;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: #38bdf8;
-      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 12px 24px -6px rgba(2, 132, 199, 0.15);
     }
 
     .card h3 {
-      font-size: 1.1rem;
-      color: #38bdf8;
+      font-size: 1.15rem;
+      color: #0284c7;
       margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .card p {
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      line-height: 1.4;
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
     }
 
     /* Footer */
     footer {
-      position: relative;
-      z-index: 2;
       text-align: center;
       padding: 20px;
-      background: rgba(15, 23, 42, 0.9);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.8rem;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.85rem;
       color: #64748b;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -206,7 +204,7 @@
     <div class="hero">
       <div class="quote-box">
         <div class="quote-title">“Cogito, ergo sum”</div>
-        <div class="quote-sub">Aku berpikir, maka aku ada</div>
+        <div class="quote-sub">aku berpikir, maka aku ada</div>
       </div>
     </div>
 
